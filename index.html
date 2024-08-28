@@ -1,0 +1,3584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AShopVN - eCommerce Website</title>
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="newshop.css">
+  <link rel="icon" href="/shopnew/android-chrome-192x192.png" type="image/png">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- wifi -->
+  <div class="alert" id="error">
+    <i class='bx bx-wifi-off icon' ></i>
+    <div class="alert-content">
+        <div class="alert-title">
+            Wifi disconnect!
+        </div>
+        <div class="des">
+            Please check your connection
+        </div>
+    </div>
+    <i class='bx bx-x close' ></i>
+</div>
+
+<div class="alert" id="success">
+  <i class='bx bx-wifi icon' ></i>
+    <div class="alert-content">
+        <div class="alert-title">
+            Wifi connected!
+        </div>
+        <div class="des">
+            Successfully connected
+        </div>
+    </div>
+    <i class='bx bx-x close' ></i>
+</div>
+<!-- wifi -->
+
+
+
+
+  <div class="overlay" data-overlay></div>
+
+  <!--
+    - MODAL
+  -->
+
+  <div class="modal" data-modal>
+
+    <div class="modal-close-overlay" data-modal-overlay></div>
+
+    <div class="modal-content">
+
+      <button class="modal-close-btn" data-modal-close>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+
+      <div class="newsletter-img">
+        <img src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/newsletter.png" alt="subscribe newsletter" width="400" height="400">
+      </div>
+
+      <div class="newsletter">
+
+        <form action="#">
+
+          <div class="newsletter-header">
+
+            <h3 class="newsletter-title">Welcome to AShopVN</h3>
+
+            <p class="newsletter-desc">
+              Follow the <b>AShopVN</b> to get latest products and discount update.
+            </p>
+
+          </div>
+
+          <!-- <input type="email" name="email" class="email-field" placeholder="Email Address" required> -->
+
+          <button type="submit" class="btn-newsletter"><a href="https://www.pinterest.com/AShopVN/" style="color: white;">Follow</a></button>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+  <!--
+    - NOTIFICATION TOAST
+  -->
+
+  <div class="notification-toast" data-toast>
+
+    <button class="toast-close-btn" data-toast-close>
+      <ion-icon name="close-outline"></ion-icon>
+    </button>
+
+    <div class="toast-banner">
+      <img src="https://down-vn.img.susercontent.com/file/vn-11134201-7r98o-lzekwj69a9u509" alt="Rose Gold Earrings" width="80" height="70">
+    </div>
+
+    <div class="toast-detail">
+
+      <p class="toast-message">
+        Someone in new just bought
+      </p>
+
+      <p class="toast-title">
+        L'Oreal Paris 3-in-1
+      </p>
+
+      <p class="toast-meta">
+        <time datetime="PT2M">2 Minutes</time> ago
+      </p>
+
+    </div>
+
+  </div>
+
+
+
+
+
+  <!--
+    - HEADER
+  -->
+
+  <header>
+
+    <div class="header-top">
+
+      <div class="container">
+
+        <ul class="header-social-container">
+
+          <li>
+            <a href="https://facebook.com/" class="social-link">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://x.com/" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://instagram.com/" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://linkedin.com/" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="header-alert-news">
+          <p>
+            <b>Free Shipping</b>
+            This Week Order Over - $55
+          </p>
+        </div>
+
+        <div class="header-top-actions">
+
+          <select name="currency">
+
+            <option value="usd">USD &dollar;</option>
+            <!-- <option value="eur">EUR &euro;</option> -->
+
+          </select>
+
+          <select name="language">
+
+            <option value="en-US">English</option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="header-main">
+
+      <div class="container">
+
+        <a href="https;" class="header-logo">
+          <img src="/shop/Screenshot 2024-08-11 164910-Photoroom.png" alt="Anon's logo" width="200" height="200">
+        </a>
+
+        <div class="header-search-container">
+            <form id="search-form" class="search-form" onsubmit="return false;">
+              <input type="text" id="searchInput" class="search-field" placeholder="Enter your product name...">
+              <button type="button" id="searchButton" class="search-btn">
+                <ion-icon name="search-outline"></ion-icon>
+              </button>
+            </form>
+          </div>
+          
+
+        <!-- <div class="header-user-actions">
+
+          <button class="action-btn">
+            <ion-icon name="person-outline"></ion-icon>
+          </button>
+
+          <button class="action-btn">
+            <ion-icon name="heart-outline"></ion-icon>
+            <span class="count">0</span>
+          </button>
+
+          <button class="action-btn">
+            <ion-icon name="bag-handle-outline"></ion-icon>
+            <span class="count">0</span>
+          </button>
+
+        </div> -->
+
+      </div>
+
+    </div>
+
+    <nav class="desktop-navigation-menu">
+
+      <div class="container">
+
+        <ul class="desktop-menu-category-list">
+
+          <li class="menu-category">
+            <a href="#" class="menu-title">Home</a>
+          </li>
+
+          <li class="menu-category">
+            <a href="#" class="menu-title">Categories</a>
+
+            <div class="dropdown-panel">
+
+              <ul class="dropdown-panel-list">
+
+                <li class="menu-title">
+                  <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v">Electronics</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v">Desktop</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v">Laptop</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="https://s.shopee.vn/4VJYjcTfld">Camera</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v">Tablet</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="https://s.shopee.vn/700tiVLgSa">Headphone</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">
+                    <img src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/electronics-banner-1.jpg" alt="headphone collection" width="250"
+                      height="119">
+                  </a>
+                </li>
+
+              </ul>
+
+              <ul class="dropdown-panel-list">
+
+                <li class="menu-title">
+                  <a href="https://s.shopee.vn/4L08YEow4L">Men's</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="https://s.shopee.vn/4L08YEow4L">Formal</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v">Casual</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v">Sports</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v">Jacket</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v">Sunglasses</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">
+                    <img src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/mens-banner.jpg" alt="men's fashion" width="250" height="119">
+                  </a>
+                </li>
+
+              </ul>
+
+              <ul class="dropdown-panel-list">
+
+                <li class="menu-title">
+                  <a href="https://s.shopee.vn/20cDmKwvIU">Women's</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="https://s.shopee.vn/20cDmKwvIU">Formal</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="https://s.shopee.vn/20cDmKwvIU">Casual</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="https://s.shopee.vn/20cDmKwvIU">Perfume</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="https://s.shopee.vn/20cDmKwvIU">Cosmetics</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="https://s.shopee.vn/6KlCwJgMlz">Bags</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">
+                    <img src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/womens-banner.jpg" alt="women's fashion" width="250" height="119">
+                  </a>
+                </li>
+
+              </ul>
+
+              <ul class="dropdown-panel-list">
+
+                <li class="menu-title">
+                  <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v">Electronics</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v">Smart Watch</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v">Smart TV</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v">Keyboard</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v">Mouse</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v">Microphone</a>
+                </li>
+
+                <li class="panel-list-item">
+                  <a href="#">
+                    <img src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/electronics-banner-2.jpg" alt="mouse collection" width="250" height="119">
+                  </a>
+                </li>
+
+              </ul>
+
+            </div>
+          </li>
+
+          <li class="menu-category">
+            <a href="https://s.shopee.vn/qQGObHfF0" class="menu-title">Men's</a>
+
+            <ul class="dropdown-list">
+
+              <li class="dropdown-item">
+                <a href="https://s.shopee.vn/qQGObHfF0">Shirt</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="https://s.shopee.vn/qQGObHfF0">Shorts & Jeans</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="https://s.shopee.vn/3fkRlpjvyK">Safety Shoes</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v">Wallet</a>
+              </li>
+
+            </ul>
+          </li>
+
+          <li class="menu-category">
+            <a href="https://s.shopee.vn/20cDnH4m15" class="menu-title">Women's</a>
+
+            <ul class="dropdown-list">
+
+              <li class="dropdown-item">
+                <a href="https://s.shopee.vn/20cDnH4m15">Dress & Frock</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v">Earrings</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v">Necklace</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="https://s.shopee.vn/5powMLB9kB">Makeup Kit</a>
+              </li>
+
+            </ul>
+          </li>
+
+          <li class="menu-category">
+            <a href="https://s.shopee.vn/9UiEk3Um9X" class="menu-title">Health</a>
+
+            <ul class="dropdown-list">
+
+              <li class="dropdown-item">
+                <a href="https://s.shopee.vn/9UiEk3Um9X">Vitamins</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="https://s.shopee.vn/9UiEk3Um9X">Supplements</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="https://s.shopee.vn/9UiEk3Um9X">Fitness Gear</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="https://s.shopee.vn/9UiEk3Um9X">Personal Care</a>
+              </li>
+
+            </ul>
+          </li>
+
+          <li class="menu-category">
+            <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="menu-title">Perfume</a>
+
+            <ul class="dropdown-list">
+
+              <li class="dropdown-item">
+                <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v">Clothes Perfume</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v">Deodorant</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v">Flower Fragrance</a>
+              </li>
+
+              <li class="dropdown-item">
+                <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v">Air Freshener</a>
+              </li>
+
+            </ul>
+          </li>
+
+          <!-- <li class="menu-category">
+            <a href="#" class="menu-title">Blog</a>
+          </li> -->
+
+          <li class="menu-category">
+            <a href="https://ashopvn.netlify.app/" class="menu-title">Hot Offers</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </nav>
+
+    <div class="mobile-bottom-navigation">
+
+      <button class="action-btn" data-mobile-menu-open-btn>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+      <button class="action-btn">
+        <ion-icon name="bag-handle-outline"></ion-icon>
+
+        <span class="count">0</span>
+      </button>
+
+      <button class="action-btn">
+        <ion-icon name="home-outline" onclick="home()"></ion-icon>
+      </button>
+
+      <button class="action-btn">
+        <ion-icon name="heart-outline"></ion-icon>
+
+        <span class="count">0</span>
+      </button>
+
+      <button class="action-btn" data-mobile-menu-open-btn>
+        <ion-icon name="grid-outline"></ion-icon>
+      </button>
+
+    </div>
+
+    <nav class="mobile-navigation-menu  has-scrollbar" data-mobile-menu>
+
+      <div class="menu-top">
+        <h2 class="menu-title">Menu</h2>
+
+        <button class="menu-close-btn" data-mobile-menu-close-btn>
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+      </div>
+
+      <ul class="mobile-menu-category-list">
+
+        <li class="menu-category">
+          <a href="" class="menu-title">Home</a>
+        </li>
+
+        <li class="menu-category">
+
+          <button class="accordion-menu" data-accordion-btn>
+            <p class="menu-title">Men's</p>
+
+            <div>
+              <ion-icon name="add-outline" class="add-icon"></ion-icon>
+              <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+            </div>
+          </button>
+
+          <ul class="submenu-category-list" data-accordion>
+
+            <li class="submenu-category">
+              <a href="https://s.shopee.vn/8ACqNbjC7V" class="submenu-title" target="_blank">Shirt</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="https://s.shopee.vn/8ACqNbjC7V" class="submenu-title" target="_blank">Shorts & Jeans</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="https://s.shopee.vn/AKHKyXmees" class="submenu-title" target="_blank">Safety Shoes</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="https://s.shopee.vn/8ACqNbjC7V" class="submenu-title" target="_blank">Wallet</a>
+            </li>
+
+          </ul>
+
+        </li>
+
+        <li class="menu-category">
+
+          <button class="accordion-menu" data-accordion-btn>
+            <p class="menu-title">Women's</p>
+
+            <div>
+              <ion-icon name="add-outline" class="add-icon"></ion-icon>
+              <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+            </div>
+          </button>
+
+          <ul class="submenu-category-list" data-accordion>
+
+            <li class="submenu-category">
+              <a href="https://s.shopee.vn/AKHKy56ggP" class="submenu-title">Dress & Frock</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="https://s.shopee.vn/AKHKy56ggP" class="submenu-title">Earrings</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="https://s.shopee.vn/r8fnx3A5" class="submenu-title">Shoes</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="https://s.shopee.vn/5fVVQ8ddR4" class="submenu-title">Makeup Kit</a>
+            </li>
+
+          </ul>
+
+        </li>
+
+        <li class="menu-category">
+
+          <button class="accordion-menu" data-accordion-btn>
+            <p class="menu-title">Health</p>
+
+            <div>
+              <ion-icon name="add-outline" class="add-icon"></ion-icon>
+              <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+            </div>
+          </button>
+
+          <ul class="submenu-category-list" data-accordion>
+
+            <li class="submenu-category">
+              <a href="https://s.shopee.vn/4pwOR2JBNf" class="submenu-title">Vitamins</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="https://s.shopee.vn/4pwOR2JBNf" class="submenu-title">Supplements</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="https://s.shopee.vn/4pwOR2JBNf" class="submenu-title">Fitness Gear</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="https://s.shopee.vn/4pwOR2JBNf" class="submenu-title">Personal Care</a>
+            </li>
+
+          </ul>
+
+        </li>
+
+        <li class="menu-category">
+
+          <button class="accordion-menu" data-accordion-btn>
+            <p class="menu-title">Perfume</p>
+
+            <div>
+              <ion-icon name="add-outline" class="add-icon"></ion-icon>
+              <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+            </div>
+          </button>
+
+          <ul class="submenu-category-list" data-accordion>
+
+            <li class="submenu-category">
+              <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="submenu-title">Clothes Perfume</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="submenu-title">Deodorant</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="submenu-title">Flower Fragrance</a>
+            </li>
+
+            <li class="submenu-category">
+              <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="submenu-title">Air Freshener</a>
+            </li>
+
+          </ul>
+
+        </li>
+
+
+
+        <li class="menu-category">
+          <a href="https://ashopvn.netlify.app/" class="menu-title">Hot Offers</a>
+        </li>
+
+      </ul>
+
+      <div class="menu-bottom">
+
+        <ul class="menu-category-list">
+
+          <li class="menu-category">
+
+            <button class="accordion-menu" data-accordion-btn>
+              <p class="menu-title">Language</p>
+
+              <ion-icon name="caret-back-outline" class="caret-back"></ion-icon>
+            </button>
+
+            <ul class="submenu-category-list" data-accordion>
+
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">English</a>
+              </li>
+
+            </ul>
+
+          </li>
+
+          <li class="menu-category">
+            <button class="accordion-menu" data-accordion-btn>
+              <p class="menu-title">Currency</p>
+              <ion-icon name="caret-back-outline" class="caret-back"></ion-icon>
+            </button>
+
+            <ul class="submenu-category-list" data-accordion>
+              <li class="submenu-category">
+                <a href="#" class="submenu-title">USD &dollar;</a>
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+
+        <ul class="menu-social-container">
+
+          <li>
+            <a href="https://facebook.com/" class="social-link">   
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https:x.com/" class="social-link">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://instagram.com/" class="social-link">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+
+
+
+  <!--
+    - MAIN
+  -->
+
+  <main>
+
+    <!--
+      - BANNER
+    -->
+
+    <div class="banner">
+
+      <div class="container">
+
+        <div class="slider-container has-scrollbar">
+
+          <div class="slider-item">
+
+            <img src="https://www.middletonshoppingcentre.co.uk/wp-content/uploads/2024/03/Middleton-Slider-Image-1-1-scaled.jpg" alt="women's latest fashion sale" class="banner-img">
+
+            <div class="banner-content">
+
+              <p class="banner-subtitle">Trending item</p>
+
+              <h2 class="banner-title">Women's latest fashion sale</h2>
+
+              <p class="banner-text">
+                starting at &dollar; <b>20</b>.00
+              </p>
+
+              <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="banner-btn">Shop now</a>
+
+            </div>
+
+          </div>
+
+          <div class="slider-item">
+
+            <img src="https://images.squarespace-cdn.com/content/v1/64f855bde1bf4f4dd5c36897/082f1d5a-3f2a-49ad-ba61-be6c4de3b6c5/vaaka_3.jpg" alt="modern sunglasses" class="banner-img">
+
+            <div class="banner-content">
+
+              <p class="banner-subtitle">Trending accessories</p>
+
+              <h2 class="banner-title">Modern sunglasses</h2>
+
+              <p class="banner-text">
+                starting at &dollar; <b>15</b>.00
+              </p>
+
+              <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="banner-btn">Shop now</a>
+
+            </div>
+
+          </div>
+
+          <div class="slider-item">
+
+            <img src="https://img.freepik.com/premium-photo/model-concept-with-copyspace-girl-wearing-sunglasses_23-2147811501.jpg" alt="new fashion summer sale" class="banner-img">
+
+            <div class="banner-content">
+
+              <p class="banner-subtitle">Sale Offer</p>
+
+              <h2 class="banner-title">New fashion summer sale</h2>
+
+              <p class="banner-text">
+                starting at &dollar; <b>29</b>.99
+              </p>
+
+              <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="banner-btn">Shop now</a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+
+    <!--
+      - CATEGORY
+    -->
+
+    <div class="category">
+
+      <div class="container">
+
+        <div class="category-item-container has-scrollbar">
+
+          <div class="category-item">
+
+            <div class="category-img-box">
+              <img src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/icons/dress.svg" alt="dress & frock" width="30">
+            </div>
+
+            <div class="category-content-box">
+
+              <div class="category-content-flex">
+                <h3 class="category-item-title">Dress & frock</h3>
+
+                <p class="category-item-amount">(53)</p>
+              </div>
+
+              <a href="https://s.shopee.vn/8pSXF6FHpV" class="category-btn">Show all</a>
+
+            </div>
+
+          </div>
+
+          <div class="category-item">
+
+            <div class="category-img-box">
+              <img src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/icons/coat.svg" alt="winter wear" width="30">
+            </div>
+
+            <div class="category-content-box">
+
+              <div class="category-content-flex">
+                <h3 class="category-item-title">Winter wear</h3>
+
+                <p class="category-item-amount">(58)</p>
+              </div>
+
+              <a href="
+              https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="category-btn">Show all</a>
+
+            </div>
+
+          </div>
+
+          <div class="category-item">
+
+            <div class="category-img-box">
+              <img src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/icons/glasses.svg" alt="glasses & lens" width="30">
+            </div>
+
+            <div class="category-content-box">
+
+              <div class="category-content-flex">
+                <h3 class="category-item-title">Glasses & lens</h3>
+
+                <p class="category-item-amount">(68)</p>
+              </div>
+
+              <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="category-btn">Show all</a>
+
+            </div>
+
+          </div>
+
+          <div class="category-item">
+
+            <div class="category-img-box">
+              <img src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/icons/shorts.svg" alt="shorts & jeans" width="30">
+            </div>
+
+            <div class="category-content-box">
+
+              <div class="category-content-flex">
+                <h3 class="category-item-title">Shorts & jeans</h3>
+
+                <p class="category-item-amount">(84)</p>
+              </div>
+
+              <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="category-btn">Show all</a>
+
+            </div>
+
+          </div>
+
+          <div class="category-item">
+
+            <div class="category-img-box">
+              <img src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/icons/tee.svg" alt="t-shirts" width="30">
+            </div>
+
+            <div class="category-content-box">
+
+              <div class="category-content-flex">
+                <h3 class="category-item-title">T-shirts</h3>
+
+                <p class="category-item-amount">(35)</p>
+              </div>
+
+              <a href="https://s.shopee.vn/8pSWyhGvYp" class="category-btn">Show all</a>
+
+            </div>
+
+          </div>
+
+          <div class="category-item">
+
+            <div class="category-img-box">
+              <img src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/icons/jacket.svg" alt="jacket" width="30">
+            </div>
+
+            <div class="category-content-box">
+
+              <div class="category-content-flex">
+                <h3 class="category-item-title">Jacket</h3>
+
+                <p class="category-item-amount">(16)</p>
+              </div>
+
+              <a href="https://s.shopee.vn/qQFiqgc0x" class="category-btn">Show all</a>
+
+            </div>
+
+          </div>
+
+          <div class="category-item">
+
+            <div class="category-img-box">
+              <img src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/icons/watch.svg" alt="watch" width="30">
+            </div>
+
+            <div class="category-content-box">
+
+              <div class="category-content-flex">
+                <h3 class="category-item-title">Watch</h3>
+
+                <p class="category-item-amount">(27)</p>
+              </div>
+
+              <a href="https://s.shopee.vn/6fO2fcAOTg" class="category-btn">Show all</a>
+
+            </div>
+
+          </div>
+
+          <div class="category-item">
+
+            <div class="category-img-box">
+              <img src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/icons/hat.svg" alt="hat & caps" width="30">
+            </div>
+
+            <div class="category-content-box">
+
+              <div class="category-content-flex">
+                <h3 class="category-item-title">Hat & caps</h3>
+
+                <p class="category-item-amount">(39)</p>
+              </div>
+
+              <a href="https://s.shopee.vn/30UkIxQjTf" class="category-btn">Show all</a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+
+    <!--
+      - PRODUCT
+    -->
+
+    <div class="product-container">
+
+      <div class="container">
+
+
+        <!--
+          - SIDEBAR
+        -->
+
+        <div class="sidebar  has-scrollbar" data-mobile-menu>
+
+          <div class="sidebar-category">
+
+            <div class="sidebar-top">
+              <h2 class="sidebar-title">Category</h2>
+
+              <button class="sidebar-close-btn" data-mobile-menu-close-btn>
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+            </div>
+
+            <ul class="sidebar-menu-category-list">
+
+              <li class="sidebar-menu-category">
+
+                <button class="sidebar-accordion-menu" data-accordion-btn>
+
+                  <div class="menu-title-flex">
+                    <img src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/icons/dress.svg" alt="clothes" width="20" height="20"
+                      class="menu-title-img">
+
+                    <p class="menu-title">Clothes</p>
+                  </div>
+
+                  <div>
+                    <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                  </div>
+
+                </button>
+
+                <ul class="sidebar-submenu-category-list" data-accordion>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="sidebar-submenu-title">
+                      <p class="product-name">Shirt</p>
+                      <data value="300" class="stock" title="Available Stock">300</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="sidebar-submenu-title">
+                      <p class="product-name">shorts & jeans</p>
+                      <data value="60" class="stock" title="Available Stock">60</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="sidebar-submenu-title">
+                      <p class="product-name">jacket</p>
+                      <data value="50" class="stock" title="Available Stock">50</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="sidebar-submenu-title">
+                      <p class="product-name">dress & frock</p>
+                      <data value="87" class="stock" title="Available Stock">87</data>
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+              <li class="sidebar-menu-category">
+
+                <button class="sidebar-accordion-menu" data-accordion-btn>
+
+                  <div class="menu-title-flex">
+                    <img src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/icons/shoes.svg" alt="footwear" class="menu-title-img" width="20"
+                      height="20">
+
+                    <p class="menu-title">Footwear</p>
+                  </div>
+
+                  <div>
+                    <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                  </div>
+
+                </button>
+
+                <ul class="sidebar-submenu-category-list" data-accordion>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="sidebar-submenu-title">
+                      <p class="product-name">Sports</p>
+                      <data value="45" class="stock" title="Available Stock">45</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="sidebar-submenu-title">
+                      <p class="product-name">Formal</p>
+                      <data value="75" class="stock" title="Available Stock">75</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="sidebar-submenu-title">
+                      <p class="product-name">Casual</p>
+                      <data value="35" class="stock" title="Available Stock">35</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="sidebar-submenu-title">
+                      <p class="product-name">Safety Shoes</p>
+                      <data value="26" class="stock" title="Available Stock">26</data>
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+              <li class="sidebar-menu-category">
+
+                <button class="sidebar-accordion-menu" data-accordion-btn>
+
+                  <div class="menu-title-flex">
+                    <img src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/icons/jewelry.svg" alt="clothes" class="menu-title-img" width="20"
+                      height="20">
+
+                    <p class="menu-title">Health</p>
+                  </div>
+
+                  <div>
+                    <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                  </div>
+
+                </button>
+
+                <ul class="sidebar-submenu-category-list" data-accordion>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="https://s.shopee.vn/4pwOR2JBNf" class="sidebar-submenu-title">
+                      <p class="product-name">Vitamins</p>
+                      <data value="46" class="stock" title="Available Stock">46</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="https://s.shopee.vn/4pwOR2JBNf" class="sidebar-submenu-title">
+                      <p class="product-name">Supplements</p>
+                      <data value="73" class="stock" title="Available Stock">73</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="https://s.shopee.vn/4pwOR2JBNf" class="sidebar-submenu-title">
+                      <p class="product-name">Fitness Gear</p>
+                      <data value="61" class="stock" title="Available Stock">61</data>
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+              <li class="sidebar-menu-category">
+
+                <button class="sidebar-accordion-menu" data-accordion-btn>
+
+                  <div class="menu-title-flex">
+                    <img src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/icons/perfume.svg" alt="perfume" class="menu-title-img" width="20"
+                      height="20">
+
+                    <p class="menu-title">Perfume</p>
+                  </div>
+
+                  <div>
+                    <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                  </div>
+
+                </button>
+
+                <ul class="sidebar-submenu-category-list" data-accordion>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="sidebar-submenu-title">
+                      <p class="product-name">Clothes Perfume</p>
+                      <data value="12" class="stock" title="Available Stock">12 pcs</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="sidebar-submenu-title">
+                      <p class="product-name">Deodorant</p>
+                      <data value="60" class="stock" title="Available Stock">60 pcs</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="sidebar-submenu-title">
+                      <p class="product-name">jacket</p>
+                      <data value="50" class="stock" title="Available Stock">50 pcs</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="sidebar-submenu-title">
+                      <p class="product-name">dress & frock</p>
+                      <data value="87" class="stock" title="Available Stock">87 pcs</data>
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+              <li class="sidebar-menu-category">
+
+                <button class="sidebar-accordion-menu" data-accordion-btn>
+
+                  <div class="menu-title-flex">
+                    <img src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/icons/cosmetics.svg" alt="cosmetics" class="menu-title-img" width="20"
+                      height="20">
+
+                    <p class="menu-title">Cosmetics</p>
+                  </div>
+
+                  <div>
+                    <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                  </div>
+
+                </button>
+
+                <ul class="sidebar-submenu-category-list" data-accordion>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="sidebar-submenu-title">
+                      <p class="product-name">Shampoo</p>
+                      <data value="68" class="stock" title="Available Stock">68</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="sidebar-submenu-title">
+                      <p class="product-name">Sunscreen</p>
+                      <data value="46" class="stock" title="Available Stock">46</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="sidebar-submenu-title">
+                      <p class="product-name">Body Wash</p>
+                      <data value="79" class="stock" title="Available Stock">79</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="sidebar-submenu-title">
+                      <p class="product-name">Makeup Kit</p>
+                      <data value="23" class="stock" title="Available Stock">23</data>
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+              <li class="sidebar-menu-category">
+
+                <button class="sidebar-accordion-menu" data-accordion-btn>
+
+                  <div class="menu-title-flex">
+                    <img src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/icons/glasses.svg" alt="glasses" class="menu-title-img" width="20"
+                      height="20">
+
+                    <p class="menu-title">Glasses</p>
+                  </div>
+
+                  <div>
+                    <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                  </div>
+
+                </button>
+
+                <ul class="sidebar-submenu-category-list" data-accordion>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="sidebar-submenu-title">
+                      <p class="product-name">Sunglasses</p>
+                      <data value="50" class="stock" title="Available Stock">50</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="sidebar-submenu-title">
+                      <p class="product-name">Lenses</p>
+                      <data value="48" class="stock" title="Available Stock">48</data>
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+              <li class="sidebar-menu-category">
+
+                <button class="sidebar-accordion-menu" data-accordion-btn>
+
+                  <div class="menu-title-flex">
+                    <img src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/icons/bag.svg" alt="bags" class="menu-title-img" width="20" height="20">
+
+                    <p class="menu-title">Bags</p>
+                  </div>
+
+                  <div>
+                    <ion-icon name="add-outline" class="add-icon"></ion-icon>
+                    <ion-icon name="remove-outline" class="remove-icon"></ion-icon>
+                  </div>
+
+                </button>
+
+                <ul class="sidebar-submenu-category-list" data-accordion>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="https://s.shopee.vn/3VR0tCBcE4" class="sidebar-submenu-title">
+                      <p class="product-name">Shopping Bag</p>
+                      <data value="62" class="stock" title="Available Stock">62</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="https://s.shopee.vn/3VR0tCBcE4" class="sidebar-submenu-title">
+                      <p class="product-name">Gym Backpack</p>
+                      <data value="35" class="stock" title="Available Stock">35</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="https://s.shopee.vn/3VR0tCBcE4" class="sidebar-submenu-title">
+                      <p class="product-name">Purse</p>
+                      <data value="80" class="stock" title="Available Stock">80</data>
+                    </a>
+                  </li>
+
+                  <li class="sidebar-submenu-category">
+                    <a href="https://s.shopee.vn/3VR0tCBcE4" class="sidebar-submenu-title">
+                      <p class="product-name">Wallet</p>
+                      <data value="75" class="stock" title="Available Stock">75</data>
+                    </a>
+                  </li>
+
+                </ul>
+
+              </li>
+
+            </ul>
+
+          </div>
+
+          <div class="product-showcase">
+
+            <h3 class="showcase-heading">best sellers</h3>
+
+            <div class="showcase-wrapper">
+
+              <div class="showcase-container">
+
+                <div class="showcase">
+
+                  <a href="https://s.shopee.vn/1LMX2AXaan" class="showcase-img-box">
+                    <img src="https://down-vn.img.susercontent.com/file/vn-11134201-7r98o-lzekwj69a9u509" alt="baby fabric shoes" width="75" height="75"
+                      class="showcase-img">
+                  </a>
+
+                  <div class="showcase-content">
+
+                    <a href="#">
+                      <h4 class="showcase-title"> L'Oreal Paris 3-in-1 Deep Cleansing Micellar Water 400ml</h4>
+                    </a>
+
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <del>$15.00</del>
+                      <p class="price">$7.50</p>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="showcase">
+
+                  <a href="https://s.shopee.vn/20cDq3ELsm" class="showcase-img-box">
+                    <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lyvntyda71hpd0" alt="men's hoodies t-shirt" class="showcase-img"
+                      width="75" height="75">
+                  </a>
+
+                  <div class="showcase-content">
+
+                    <a href="#">
+                      <h4 class="showcase-title">men's hoodies t-shirt</h4>
+                    </a>
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <del>$17.00</del>
+                      <p class="price">$6.63</p>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="showcase">
+
+                  <a href="https://s.shopee.vn/1qIndzHj6o" class="showcase-img-box">
+                    <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-ly1rcy9xy8616c" alt="girls t-shirt" class="showcase-img" width="75"
+                      height="75">
+                  </a>
+
+                  <div class="showcase-content">
+
+                    <a href="#">
+                      <h4 class="showcase-title">girls t-shirt</h4>
+                    </a>
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-half-outline"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <del>$5.00</del>
+                      <p class="price">$3.71</p>
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="showcase">
+
+                  <a href="https://s.shopee.vn/6V4dCobPxQ" class="showcase-img-box">
+                    <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lz7hgoy99x713c" alt="woolen hat for men" class="showcase-img" width="75"
+                      height="75">
+                  </a>
+
+                  <div class="showcase-content">
+
+                    <a href="#">
+                      <h4 class="showcase-title">Maylily Store Body-Hugging Mandarin Collar Cotton T-Shirt</h4>
+                    </a>
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+
+                    <div class="price-box">
+                      <del>$8.00</del>
+                      <p class="price">$5.38</p>
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="product-box">
+
+          <!--
+            - PRODUCT MINIMAL
+          -->
+
+          <div class="product-minimal">
+
+            <div class="product-showcase">
+
+              <h2 class="title">New Arrivals</h2>
+
+              <div class="showcase-wrapper has-scrollbar">
+
+                <div class="showcase-container">
+
+                  <div class="showcase">
+
+                    <a href="https://s.shopee.vn/2qBKqOGtoQ" class="showcase-img-box">
+                      <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lgvuv5kklucze5" alt="relaxed short full sleeve t-shirt" width="70" class="showcase-img">
+                    </a>
+
+                    <div class="showcase-content">
+
+                      <a href="#">
+                        <h4 class="showcase-title">VISYHAN QN01 Women's Cotton Sports Shorts, Best Quality for Home Wear</h4>
+                      </a>
+
+                      <a href="#" class="showcase-category">Clothes</a>
+
+                      <div class="price-box">
+                        <p class="price">$0.83</p>
+                        <del>$5.00</del>
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                  <div class="showcase">
+                  
+                    <a href="https://s.shopee.vn/2frueGvE0y" class="showcase-img-box">
+                      <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lws98mw9n4yjc3" alt="girls pink embro design top" class="showcase-img" width="70">
+                    </a>
+                  
+                    <div class="showcase-content">
+                  
+                      <a href="#">
+                        <h4 class="showcase-title">Bl36 Cropped Knit Tank Top with Padding, Small Straps, 4 Colors, Button Closure, Body-Hugging, Available in Plus Sizes</h4>
+                      </a>
+                  
+                      <a href="#" class="showcase-category">Clothes</a>
+                  
+                      <div class="price-box">
+                        <p class="price">$0.89</p>
+                        <del>$4.00</del>
+                      </div>
+                  
+                    </div>
+                  
+                  </div>
+
+                  <div class="showcase">
+                  
+                    <a href="https://s.shopee.vn/30Ul3M4aFp" class="showcase-img-box">
+                      <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lomd1btmnelze0" alt="black floral wrap midi skirt" class="showcase-img"
+                        width="70">
+                    </a>
+                  
+                    <div class="showcase-content">
+                  
+                      <a href="#">
+                        <h4 class="showcase-title">Dark Grey Long Knitted Cardigan, Oversized Fit</h4>
+                      </a>
+                  
+                      <a href="#" class="showcase-category">Clothes</a>
+                  
+                      <div class="price-box">
+                        <p class="price">$3.71</p>
+                        <del>$6.00</del>
+                      </div>
+                  
+                    </div>
+                  
+                  </div>
+
+                  <div class="showcase">
+                  
+                    <a href="https://s.shopee.vn/5KsfpsXYsw" class="showcase-img-box">
+                      <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-ljpgd5efxrsy86" alt="pure garment dyed cotton shirt" class="showcase-img"
+                        width="70">
+                    </a>
+                  
+                    <div class="showcase-content">
+                  
+                      <a href="#">
+                        <h4 class="showcase-title"> MA101 Women's Stretchy Waistband Cotton Shorts, Stylish Khaki</h4>
+                      </a>
+                  
+                      <a href="#" class="showcase-category">Girls Fashion</a>
+                  
+                      <div class="price-box">
+                        <p class="price">$1.04</p>
+                        <del>$7.00</del>
+                      </div>
+                  
+                    </div>
+                  
+                  </div>
+
+                </div>
+
+                <div class="showcase-container">
+                
+                  <div class="showcase">
+                
+                    <a href="https://s.shopee.vn/50FpRbzgPE" class="showcase-img-box">
+                      <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lyv3o5318mkt0a" alt="men yarn fleece full-zip jacket" class="showcase-img"
+                        width="70">
+                    </a>
+                
+                    <div class="showcase-content">
+                
+                      <a href="#">
+                        <h4 class="showcase-title">DSQ Milano High-Quality Cotton T-Shirt, DSquared2 Print, Breathable and Moisture-Wicking</h4>
+                      </a>
+                
+                      <a href="#" class="showcase-category">Mens Fashion</a>
+                
+                      <div class="price-box">
+                        <p class="price">$3.13</p>
+                        <del>$11.00</del>
+                      </div>
+                
+                    </div>
+                
+                  </div>
+                
+                  <div class="showcase">
+                
+                    <a href="https://s.shopee.vn/20cDsp5zIo" class="showcase-img-box">
+                      <img src="https://down-vn.img.susercontent.com/file/vn-11134201-7r98o-lvkrzuuwfi7q32" alt="mens winter leathers jackets" class="showcase-img"
+                        width="70">
+                    </a>
+                
+                    <div class="showcase-content">
+                
+                      <a href="#">
+                        <h4 class="showcase-title">Tomy High-Quality Unisex Cotton T-Shirt, Trendy and Comfortable, Perfect for Couples</h4>
+                      </a>
+                
+                      <a href="#" class="showcase-category">Mens Fashion</a>
+                
+                      <div class="price-box">
+                        <p class="price">$3.13</p>
+                        <del>$10.00</del>
+                      </div>
+                
+                    </div>
+                
+                  </div>
+                
+                  <div class="showcase">
+                
+                    <a href="https://s.shopee.vn/20cDtRmJbz" class="showcase-img-box">
+                      <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lz3mr5ej8gwxd0" alt="mens winter leathers jackets" class="showcase-img"
+                        width="70">
+                    </a>
+                
+                    <div class="showcase-content">
+                
+                      <a href="https://s.shopee.vn/20cDtRmJbz">
+                        <h4 class="showcase-title"> DSQ Premium Vintage-Style T-Shirt, Dark Blue with Text Print, Hot Trend 2024</h4>
+                      </a>
+                
+                      <a href="https://s.shopee.vn/20cDtRmJbz" class="showcase-category">Mens Fashion</a>
+                
+                      <div class="price-box">
+                        <p class="price">$2.88</p>
+                        <del>$7.00</del>
+                      </div>
+                
+                    </div>
+                
+                  </div>
+                
+                  <div class="showcase">
+                
+                    <a href="https://s.shopee.vn/BAZiEtnBm" class="showcase-img-box">
+                      <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lz3n1cbiaq8d0a" alt="better basics french terry sweatshorts" class="showcase-img"
+                        width="70">
+                    </a>
+                
+                    <div class="showcase-content">
+                
+                      <a href="https://s.shopee.vn/BAZiEtnBm">
+                        <h4 class="showcase-title">DSQ Premium T-Shirt, Dark Grey with DSQUARED2 Text Print, Trendy 2024</h4>
+                      </a>
+                
+                      <a href="https://s.shopee.vn/BAZiEtnBm" class="showcase-category">Mens Fashion</a>
+                
+                      <div class="price-box">
+                        <p class="price">$2.88</p>
+                        <del>$10.00</del>
+                      </div>
+                
+                    </div>
+                
+                  </div>
+                
+                </div>
+
+              </div>
+
+            </div>
+
+            <div class="product-showcase">
+            
+              <h2 class="title">Trending</h2>
+            
+              <div class="showcase-wrapper  has-scrollbar">
+            
+                <div class="showcase-container">
+            
+                  <div class="showcase">
+            
+                    <a href="https://s.shopee.vn/g6qJp9uFP" class="showcase-img-box">
+                      <img src="https://down-vn.img.susercontent.com/file/vn-11134201-7r98o-lwp6rzrscv96f8" alt="running & trekking shoes - white" class="showcase-img"
+                        width="70">
+                    </a>
+            
+                    <div class="showcase-content">
+            
+                      <a href="https://s.shopee.vn/g6qJp9uFP">
+                        <h4 class="showcase-title">Romand Juicy Lasting Tint 5.5g, Korean Lip Tint for Plump Lips</h4>
+                      </a>
+            
+                      <a href="https://s.shopee.vn/g6qJp9uFP" class="showcase-category">Beauty Products</a>
+            
+                      <div class="price-box">
+                        <p class="price">$7.46</p>
+                        <del>$15.00</del>
+                      </div>
+            
+                    </div>
+            
+                  </div>
+            
+                  <div class="showcase">
+            
+                    <a href="https://s.shopee.vn/5VC64wL34D" class="showcase-img-box">
+                      <img src="https://down-bs-vn.img.susercontent.com/sg-11134201-7rd5s-luado6k7rab971.webp" alt="trekking & running shoes - black" class="showcase-img"
+                        width="70">
+                    </a>
+            
+                    <div class="showcase-content">
+            
+                      <a href="https://s.shopee.vn/5VC64wL34D">
+                        <h4 class="showcase-title">Silicone Scalp Massage Brush, Reduces Hair Loss and Stimulates Hair Growth</h4>
+                      </a>
+            
+                      <a href="https://s.shopee.vn/5VC64wL34D" class="showcase-category">Beauty Products</a>
+            
+                      <div class="price-box">
+                        <p class="price">$0.21</p>
+                        <del>$3.00</del>
+                      </div>
+            
+                    </div>
+            
+                  </div>
+            
+                  <div class="showcase">
+            
+                    <a href="https://s.shopee.vn/3AoBIspIEF" class="showcase-img-box">
+                      <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-ls88e91eiye19f" alt="womens party wear shoes" class="showcase-img"
+                        width="70">
+                    </a>
+            
+                    <div class="showcase-content">
+            
+                      <a href="https://s.shopee.vn/3AoBIspIEF">
+                        <h4 class="showcase-title">HOBEBAR Clay Mask 55g, Deep Cleansing, Pore Tightening, Blackhead Removal, and Acne Drying</h4>
+                      </a>
+            
+                      <a href="https://s.shopee.vn/3AoBIspIEF" class="showcase-category">Beauty Products</a>
+            
+                      <div class="price-box">
+                        <p class="price">$0.63</p>
+                        <del>$3.00</del>
+                      </div>
+            
+                    </div>
+            
+                  </div>
+            
+                  <div class="showcase">
+            
+                    <a href="https://s.shopee.vn/9A5OSH5TqN" class="showcase-img-box">
+                      <img src="https://down-bs-vn.img.susercontent.com/vn-11134207-7r98o-lxjbjuuw49nf58.webp" alt="sports claw women's shoes" class="showcase-img"
+                        width="70">
+                    </a>
+            
+                    <div class="showcase-content">
+            
+                      <a href="https://s.shopee.vn/9A5OSH5TqN">
+                        <h4 class="showcase-title">222-Piece 3-Layer Cotton Pads, Makeup Removal Pads</h4>
+                      </a>
+            
+                      <a href="https://s.shopee.vn/9A5OSH5TqN" class="showcase-category">Beauty Products</a>
+            
+                      <div class="price-box">
+                        <p class="price">$0.04</p>
+                        <del>$2.00</del>
+                      </div>
+            
+                    </div>
+            
+                  </div>
+            
+                </div>
+            
+                <div class="showcase-container">
+            
+                  <div class="showcase">
+            
+                    <a href="https://s.shopee.vn/1LMX8EiMCR" class="showcase-img-box">
+                      <img src="https://down-bs-vn.img.susercontent.com/cn-11134207-7r98o-ll95se3db9xw13.webp" alt="air tekking shoes - white" class="showcase-img"
+                        width="70">
+                    </a>
+            
+                    <div class="showcase-content">
+            
+                      <a href="https://s.shopee.vn/1LMX8EiMCR">
+                        <h4 class="showcase-title">SXY299 Whitening and Oil-Control Facial Cleanser, Hydrating and Dirt-Removing</h4>
+                      </a>
+            
+                      <a href="https://s.shopee.vn/1LMX8EiMCR" class="showcase-category">Beauty Products</a>
+            
+                      <div class="price-box">
+                        <p class="price">$0.33</p>
+                        <del>$5.00</del>
+                      </div>
+            
+                    </div>
+            
+                  </div>
+            
+                  <div class="showcase">
+            
+                    <a href="https://s.shopee.vn/1VfxKdjhN5" class="showcase-img-box">
+                      <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lj5kmzgj4e6q58" alt="Boot With Suede Detail" class="showcase-img" width="70">
+                    </a>
+            
+                    <div class="showcase-content">
+            
+                      <a href="https://s.shopee.vn/1VfxKdjhN5">
+                        <h4 class="showcase-title">Deelab Men's Fragrance Spray, Light, Elegant, and Memorable - 10ml</h4>
+                      </a>
+            
+                      <a href="https://s.shopee.vn/1VfxKdjhN5" class="showcase-category">Perfume</a>
+            
+                      <div class="price-box">
+                        <p class="price">$0.75</p>
+                        <del>$3.00</del>
+                      </div>
+            
+                    </div>
+            
+                  </div>
+            
+                  <div class="showcase">
+            
+                    <a href="https://s.shopee.vn/4fcz6f638d" class="showcase-img-box">
+                      <img src="https://down-vn.img.susercontent.com/file/cn-11134207-7qukw-lj2phep6cry2cc" alt="men's leather formal wear shoes" class="showcase-img"
+                        width="70">
+                    </a>
+            
+                    <div class="showcase-content">
+            
+                      <a href="https://s.shopee.vn/4fcz6f638d">
+                        <h4 class="showcase-title">A740 Whitening Facial Cleanser, Exfoliates, Controls Oil, and Fades Freckles</h4>
+                      </a>
+            
+                      <a href="https://s.shopee.vn/4fcz6f638d" class="showcase-category">Beauty Products</a>
+            
+                      <div class="price-box">
+                        <p class="price">$0.33</p>
+                        <del>$2.00</del>
+                      </div>
+            
+                    </div>
+            
+                  </div>
+            
+                  <div class="showcase">
+            
+                    <a href="https://s.shopee.vn/BAZkX6Czy" class="showcase-img-box">
+                      <img src="https://down-vn.img.susercontent.com/file/314d1347861349756274038820d0432e" alt="casual men's brown shoes" class="showcase-img" width="70">
+                    </a>
+            
+                    <div class="showcase-content">
+            
+                      <a href="https://s.shopee.vn/BAZkX6Czy">
+                        <h4 class="showcase-title"> Hatomugi Coix Seed Moisturizing Facial Cleanser 170g, Whitening and Hydrating</h4>
+                      </a>
+            
+                      <a href="https://s.shopee.vn/BAZkX6Czy" class="showcase-category">Beauty Products</a>
+            
+                      <div class="price-box">
+                        <p class="price">$1.81</p>
+                        <del>$5.00</del>
+                      </div>
+            
+                    </div>
+            
+                  </div>
+            
+                </div>
+            
+              </div>
+            
+            </div>
+
+            <div class="product-showcase">
+            
+              <h2 class="title">Top Rated</h2>
+            
+              <div class="showcase-wrapper  has-scrollbar">
+            
+                <div class="showcase-container">
+            
+                  <div class="showcase">
+            
+                    <a href="https://s.shopee.vn/BAZl1Xgi8" class="showcase-img-box">
+                      <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lxqotj0prvtl73" alt="pocket watch leather pouch" class="showcase-img"
+                        width="70">
+                    </a>
+            
+                    <div class="showcase-content">
+            
+                      <a href="https://s.shopee.vn/BAZl1Xgi8">
+                        <h4 class="showcase-title"> Dove Body Scrub Smoothie, Exfoliates and Brightens Skin</h4>
+                      </a>
+            
+                      <a href="https://s.shopee.vn/BAZl1Xgi8" class="showcase-category">Beauty Products</a>
+            
+                      <div class="price-box">
+                        <p class="price">$6.21</p>
+                        <del>$10.00</del>
+                      </div>
+            
+                    </div>
+            
+                  </div>
+            
+                  <div class="showcase">
+            
+                    <a href="https://s.shopee.vn/40NIKGVqVv" class="showcase-img-box">
+                      <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-loe1mdzathh3b5" alt="silver deer heart necklace" class="showcase-img"
+                        width="70">
+                    </a>
+            
+                    <div class="showcase-content">
+            
+                      <a href="https://s.shopee.vn/40NIKGVqVv">
+                        <h4 class="showcase-title">5D 3-Layer Face Mask, UV Protection, Dustproof, and Sunblock</h4>
+                      </a>
+            
+                      <a href="https://s.shopee.vn/40NIKGVqVv" class="showcase-category">Health Products</a>
+            
+                      <div class="price-box">
+                        <p class="price">$0.04</p>
+                        <del>$4.2</del>
+                      </div>
+            
+                    </div>
+            
+                  </div>
+            
+                  <div class="showcase">
+            
+                    <a href="https://s.shopee.vn/4fcz7l13qQ" class="showcase-img-box">
+                      <img src="https://down-vn.img.susercontent.com/file/vn-11134201-7r98o-ltlabve30nmw2f" alt="titan 100 ml womens perfume" class="showcase-img"
+                        width="70">
+                    </a>
+            
+                    <div class="showcase-content">
+            
+                      <a href="https://s.shopee.vn/4fcz7l13qQ">
+                        <h4 class="showcase-title">L'Oreal Paris Revitalift Crystal Micellar Water, Cleansing and Makeup Removal for Oily Skin</h4>
+                      </a>
+            
+                      <a href="https://s.shopee.vn/4fcz7l13qQ" class="showcase-category">Beauty Products</a>
+            
+                      <div class="price-box">
+                        <p class="price">$29.17</p>
+                        <del>40.00</del>
+                      </div>
+            
+                    </div>
+            
+                  </div>
+            
+                  <div class="showcase">
+            
+                    <a href="https://s.shopee.vn/6V4dJIKq9Y" class="showcase-img-box">
+                      <img src="https://down-vn.img.susercontent.com/file/sg-11134201-7qvg4-lful3n22tw8x02" alt="men's leather reversible belt" class="showcase-img"
+                        width="70">
+                    </a>
+            
+                    <div class="showcase-content">
+            
+                      <a href="https://s.shopee.vn/6V4dJIKq9Y">
+                        <h4 class="showcase-title">Moisturizing Cream for Dry Skin</h4>
+                      </a>
+            
+                      <a href="https://s.shopee.vn/6V4dJIKq9Y" class="showcase-category">Beauty Products</a>
+            
+                      <div class="price-box">
+                        <p class="price">$29.17</p>
+                        <del>$45.7</del>
+                      </div>
+            
+                    </div>
+            
+                  </div>
+            
+                </div>
+            
+                <div class="showcase-container">
+            
+                  <div class="showcase">
+            
+                    <a href="https://s.shopee.vn/4pwPKiaaGt" class="showcase-img-box">
+                      <img src="https://down-bs-vn.img.susercontent.com/vn-11134207-7r98o-lx5p59talj2z91.webp" alt="platinum zircon classic ring" class="showcase-img"
+                        width="70">
+                    </a>
+            
+                    <div class="showcase-content">
+            
+                      <a href="https://s.shopee.vn/4pwPKiaaGt">
+                        <h4 class="showcase-title">Chillwipes Disposable Face Towels, Dry and Wet Wipes</h4>
+                      </a>
+            
+                      <a href="https://s.shopee.vn/4pwPKiaaGt" class="showcase-category">Dry Wipes</a>
+            
+                      <div class="price-box">
+                        <p class="price">$1.50</p>
+                        <del>$5.00</del>
+                      </div>
+            
+                    </div>
+            
+                  </div>
+            
+                  <div class="showcase">
+            
+                    <a href="https://s.shopee.vn/50FpXG7tMk" class="showcase-img-box">
+                      <img src="https://down-bs-vn.img.susercontent.com/vn-11134201-7r98o-ltlabpm9grzh8e.webp" alt="smart watche vital plus" class="showcase-img" width="70">
+                    </a>
+            
+                    <div class="showcase-content">
+            
+                      <a href="https://s.shopee.vn/50FpXG7tMk">
+                        <h4 class="showcase-title">L'Oreal Paris Pure Revitalift Hyaluronic Acid Micellar Water, Cleansing and Firming</h4>
+                      </a>
+            
+                      <a href="https://s.shopee.vn/50FpXG7tMk" class="showcase-category">Beauty Products</a>
+            
+                      <div class="price-box">
+                        <p class="price">$29.17</p>
+                        <del>$68.00</del>
+                      </div>
+            
+                    </div>
+            
+                  </div>
+            
+                  <div class="showcase">
+            
+                    <a href="https://s.shopee.vn/2qBKxVwkEl" class="showcase-img-box">
+                      <img src="https://down-bs-vn.img.susercontent.com/vn-11134201-7r98o-ltlac7lv52r452.webp" alt="shampoo conditioner packs" class="showcase-img"
+                        width="70">
+                    </a>
+            
+                    <div class="showcase-content">
+            
+                      <a href="https://s.shopee.vn/2qBKxVwkEl">
+                        <h4 class="showcase-title">L'Oreal Paris Glycolic Bright 1.0% Glycolic Acid (AHA), Instant Brightening Serum</h4>
+                      </a>
+            
+                      <a href="https://s.shopee.vn/2qBKxVwkEl" class="showcase-category">Beauty Products</a>
+            
+                      <div class="price-box">
+                        <p class="price">$29.17</p>
+                        <del>$63.02</del>
+                      </div>
+            
+                    </div>
+            
+                  </div>
+            
+                  <div class="showcase">
+            
+                    <a href="https://s.shopee.vn/3L7bYeOvOC" class="showcase-img-box">
+                      <img src="https://down-bs-vn.img.susercontent.com/1f62fd9f67b213be415478d43b9e42bf.webp" alt="rose gold peacock earrings" class="showcase-img"
+                        width="70">
+                    </a>
+            
+                    <div class="showcase-content">
+            
+                      <a href="https://s.shopee.vn/3L7bYeOvOC">
+                        <h4 class="showcase-title">Hada Labo Advanced Nourish Cleanser, Optimal Moisturizing Facial Cleanser</h4>
+                      </a>
+            
+                      <a href="https://s.shopee.vn/3L7bYeOvOC" class="showcase-category">Beauty Products</a>
+            
+                      <div class="price-box">
+                        <p class="price">$3.04</p>
+                        <del>$10.00</del>
+                      </div>
+            
+                    </div>
+            
+                  </div>
+            
+                </div>
+            
+              </div>
+            
+            </div>
+
+          </div>
+
+
+
+          <!--
+            - PRODUCT FEATURED
+          -->
+
+          <div class="product-featured">
+
+            <h2 class="title">Deal of the day</h2>
+
+            <div class="showcase-wrapper has-scrollbar">
+
+              <div class="showcase-container">
+
+                <div class="showcase">
+                  
+                  <div class="showcase-banner">
+                    <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-ly209rqgpryz52" alt="shampoo, conditioner & facewash packs" class="showcase-img">
+                  </div>
+
+                  <div class="showcase-content">
+                    
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
+                    </div>
+
+                    <a href="https://s.shopee.vn/7AKKANHvyB">
+                      <h3 class="showcase-title">Gonz Oversized Unisex T-Shirt</h3>
+                    </a>
+
+                    <p class="showcase-desc">
+                      Enjoy comfort and style with the Gonz Oversized T-Shirt. Made from high-quality Thai PC Cotton with a round neck and silk print.
+                    </p>
+
+                    <div class="price-box">
+                      <p class="price">$2.30</p>
+
+                      <del>$20.00</del>
+                    </div>
+
+                    <button class="add-cart-btn"><a href="https://s.shopee.vn/7AKKANHvyB" style="color: white;">Buy Now</a></button>
+
+                    <div class="showcase-status">
+                      <div class="wrapper">
+                        <p>
+                          already sold: <b>39,7k</b>
+                        </p>
+
+                        <p>
+                          available: <b>80k</b>
+                        </p>
+                      </div>
+
+                      <div class="showcase-status-bar"></div>
+                    </div>
+
+                    <div class="countdown-box">
+                      <p class="countdown-desc">
+                          Hurry Up! Offer ends in:
+                      </p>
+                      <div class="countdown">
+                          <div class="countdown-content">
+                              <p class="display-number" id="days">360</p>
+                              <p class="display-text">Days</p>
+                          </div>
+                          <div class="countdown-content">
+                              <p class="display-number" id="hours">24</p>
+                              <p class="display-text">Hours</p>
+                          </div>
+                          <div class="countdown-content">
+                              <p class="display-number" id="minutes">59</p>
+                              <p class="display-text">Min</p>
+                          </div>
+                          <div class="countdown-content">
+                              <p class="display-number" id="seconds">00</p>
+                              <p class="display-text">Sec</p>
+                          </div>
+                      </div>
+                  </div>
+                  
+
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="showcase-container">
+              
+                <div class="showcase">
+              
+                  <div class="showcase-banner">
+                    <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lpdydgwchv0u32" alt="Rose Gold diamonds Earring" class="showcase-img">
+                  </div>
+              
+                  <div class="showcase-content">
+              
+                    <div class="showcase-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+              
+                    <h3 class="showcase-title">
+                      <a href="#" class="showcase-title">GANYUAN 30G Nut Mix</a>
+                    </h3>
+              
+                    <p class="showcase-desc">
+                      Savor the crunchy blend of dried fruit and roasted nuts in GANYUAN's nutritious mix. Ideal for a healthy snack.
+                    </p>
+              
+                    <div class="price-box">
+                      <p class="price">$0.08</p>
+                      <del>$2.00</del>
+                    </div>
+              
+                    <button class="add-cart-btn"><a href="https://s.shopee.vn/7UxAaxtW0t" style="color: white;">Buy Now</a></button>
+              
+                    <div class="showcase-status">
+                      <div class="wrapper">
+                        <p> already sold: <b>1,3m</b> </p>
+              
+                        <p> available: <b>∞</b> </p>
+                      </div>
+              
+                      <div class="showcase-status-bar"></div>
+                    </div>
+              
+                    <div class="countdown-box">
+                      <p class="countdown-desc">
+                          Hurry Up! Offer ends in:
+                      </p>
+                      <div class="countdown">
+                          <div class="countdown-content">
+                              <p class="display-number" id="days">00</p>
+                              <p class="display-text">Days</p>
+                          </div>
+                          <div class="countdown-content">
+                              <p class="display-number" id="hours">00</p>
+                              <p class="display-text">Hours</p>
+                          </div>
+                          <div class="countdown-content">
+                              <p class="display-number" id="minutes">00</p>
+                              <p class="display-text">Min</p>
+                          </div>
+                          <div class="countdown-content">
+                              <p class="display-number" id="seconds">00</p>
+                              <p class="display-text">Sec</p>
+                          </div>
+                      </div>
+                  </div>
+                  
+              
+                  </div>
+              
+                </div>
+              
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!--
+            - PRODUCT GRID
+          -->
+
+          <div class="product-main">
+
+            <h2 class="title">New Products</h2>
+
+            <div class="product-grid">
+
+              <div class="showcase">
+
+                <div class="showcase-banner">
+
+                  <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lx5o5mlyq1ujf1" alt="Mens Winter Leathers Jackets" width="300" class="product-img default">
+                  <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lx5o5mlykfkr33" alt="Mens Winter Leathers Jackets" width="300" class="product-img hover">
+
+                  <p class="showcase-badge">64%</p>
+
+                  <div class="showcase-actions">
+
+                    <button class="btn-action" onclick="window.location.href='https://s.shopee.vn/4AgiduAgbs';">
+                      <ion-icon name="heart-outline"></ion-icon>
+                    </button>
+
+                    <button class="btn-action" onclick="window.location.href='https://s.shopee.vn/4AgiduAgbs'; ">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </button>
+
+                    <!-- <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button> -->
+
+                    <!-- <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button> -->
+
+                  </div>
+
+                </div>
+
+                <div class="showcase-content">
+
+                  <a href="https://s.shopee.vn/4AgiduAgbs" class="showcase-category">Socks</a>
+
+                  <a href="https://s.shopee.vn/4AgiduAgbs">
+                    <h3 class="showcase-title"> High-Top Knitted Socks</h3>
+                  </a>
+
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <div class="price-box">
+                    <p class="price">$0.83</p>
+                    <del>$2.92</del>
+                  </div>
+
+                </div>
+
+              </div>
+
+              <div class="showcase">
+              
+                <div class="showcase-banner">
+                  <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lgvuv5kkonhv1c" alt="Pure Garment Dyed Cotton Shirt" class="product-img default"
+                    width="300">
+                  <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lgvuv5kkj18392" alt="Pure Garment Dyed Cotton Shirt" class="product-img hover"
+                    width="300">
+              
+                  <p class="showcase-badge angle black">sale</p>
+              
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline" onclick="window.location.href='https://s.shopee.vn/6fO3dZ9qMK';"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline" onclick="window.location.href='https://s.shopee.vn/6fO3dZ9qMK';"></ion-icon>
+                    </button>
+              
+                    <!-- <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button> -->
+              
+                    <!-- <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button> -->
+                  </div>
+                </div>
+              
+                <div class="showcase-content">
+                  <a href="https://s.shopee.vn/6fO3dZ9qMK" class="showcase-category">short</a>
+              
+                  <h3>
+                    <a href="https://s.shopee.vn/6fO3dZ9qMK" class="showcase-title">Women’s Athletic Shorts - Premium Cotton Homewear VISYHAN QN01</a>
+                  </h3>
+              
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-half-outline"></ion-icon>
+                  </div>
+              
+                  <div class="price-box">
+                    <p class="price">$0.83</p>
+                    <del>$1.67</del>
+                  </div>
+              
+                </div>
+              
+              </div>
+
+              <div class="showcase">
+              
+                <div class="showcase-banner">
+                  <img src="https://down-bs-vn.img.susercontent.com/vn-11134207-7r98o-lyd7wbofg68xd9.webp" alt="MEN Yarn Fleece Full-Zip Jacket" class="product-img default"
+                    width="300">
+                  <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lws98mw8bdnf81" alt="MEN Yarn Fleece Full-Zip Jacket" class="product-img hover"
+                    width="300">
+              
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline" onclick="window.location.href='https://s.shopee.vn/4AgiegZQnx';" ></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline" onclick="window.location.href='https://s.shopee.vn/4AgiegZQnx';" ></ion-icon>
+                    </button>
+              
+                    <!-- <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button> -->
+              
+                    <!-- <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button> -->
+                  </div>
+                </div>
+              
+                <div class="showcase-content">
+                  <a href="https://s.shopee.vn/1B374qxC2p" class="showcase-category">Shirt</a>
+              
+                  <h3>
+                    <a href="https://s.shopee.vn/1B374qxC2p" class="showcase-title">Padded Knit Crop Top with Buttons - 4 Colors, Plus Sizes</a>
+                  </h3>
+              
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+              
+                  <div class="price-box">
+                    <p class="price">$2.04</p>
+                    <del>$3.33</del>
+                  </div>
+              
+                </div>
+              
+              </div>
+
+              <div class="showcase">
+              
+                <div class="showcase-banner">
+                  <img src="https://down-vn.img.susercontent.com/file/sg-11134201-23020-9jr49o27uhnv06.webp" alt="Black Floral Wrap Midi Skirt" class="product-img default"
+                    width="300">
+                  <img src="https://down-bs-vn.img.susercontent.com/cn-11134207-7r98o-lla5yw2c6k9g0a" alt="Black Floral Wrap Midi Skirt" class="product-img hover"
+                    width="300">
+              
+                  <p class="showcase-badge angle pink">new</p>
+              
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline" onclick="window.location.href='https://s.shopee.vn/A9xvoQ38OQ';"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline" onclick="window.location.href='https://s.shopee.vn/A9xvoQ38OQ';"></ion-icon>
+                    </button>
+              
+                    <!-- <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button> -->
+              
+                    <!-- <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button> -->
+                  </div>
+                </div>
+              
+                <div class="showcase-content">
+                  <a href="https://s.shopee.vn/A9xvoQ38OQ" class="showcase-category">bra</a>
+              
+                  <h3>
+                    <a href="https://s.shopee.vn/A9xvoQ38OQ" class="showcase-title">Fashionable Wire-Free Push-Up Bra for Women</a>
+                  </h3>
+              
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+              
+                  <div class="price-box">
+                    <p class="price">$0.50</p>
+                    <del>$1.05</del>
+                  </div>
+              
+                </div>
+              
+              </div>
+
+              <div class="showcase">
+              
+                <div class="showcase-banner">
+                  <img src="https://down-bs-vn.img.susercontent.com/vn-11134207-7r98o-lyhwqs926nj547.webp" alt="Casual Men's Brown shoes" class="product-img default"
+                    width="300">
+                  <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lomd1btmnelze0" alt="Casual Men's Brown shoes" class="product-img hover"
+                    width="300">
+              
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline" onclick="window.location.href='https://s.shopee.vn/7pa12kNXxH';"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline" onclick="window.location.href='https://s.shopee.vn/7pa12kNXxH';"></ion-icon>
+                    </button>
+              
+                    <!-- <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button> -->
+              
+                    <!-- <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button> -->
+                  </div>
+                </div>
+              
+                <div class="showcase-content">
+                  <a href="https://s.shopee.vn/7pa12kNXxH" class="showcase-category">Jacket</a>
+              
+                  <h3>
+                    <a href="https://s.shopee.vn/7pa12kNXxH" class="showcase-title">Long Knit Cardigan - Dark Grey</a>
+                  </h3>
+              
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+              
+                  <div class="price-box">
+                    <p class="price">$6.31</p>
+                    <del>$8.45</del>
+                  </div>
+              
+                </div>
+              
+              </div>
+
+              <div class="showcase">
+              
+                <div class="showcase-banner">
+                  <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lu38e26bly5b71" alt="Pocket Watch Leather Pouch" class="product-img default"
+                    width="300">
+                  <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lwmc902g0kwr91" alt="Pocket Watch Leather Pouch" class="product-img hover"
+                    width="300">
+              
+                  <p class="showcase-badge angle black">sale</p>
+              
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline" onclick="window.location.href='https://s.shopee.vn/6V4dSeWJfW';"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline" onclick="window.location.href='https://s.shopee.vn/6V4dSeWJfW';"></ion-icon>
+                    </button>
+              
+                    <!-- <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button> -->
+              
+                    <!-- <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button> -->
+                  </div>
+                </div>
+              
+                <div class="showcase-content">
+                  <a href="https://s.shopee.vn/6V4dSeWJfW" class="showcase-category">Short</a>
+              
+                  <h3>
+                    <a href="https://s.shopee.vn/6V4dSeWJfW" class="showcase-title">Cartoon Shorts Unisex - Molly Fashion BST 01</a>
+                  </h3>
+              
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+              
+                  <div class="price-box">
+                    <p class="price">$1.90</p>
+                    <del>$2.50</del>
+                  </div>
+              
+                </div>
+              
+              </div>
+
+              <div class="showcase">
+              
+                <div class="showcase-banner">
+                  <img src="https://down-vn.img.susercontent.com/file/vn-11134201-7r98o-lwse41u974d5d3" alt="Smart watche Vital Plus" class="product-img default"
+                    width="300">
+                  <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lx51uuqzw9g952" alt="Smart watche Vital Plus" class="product-img hover" width="300">
+              
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline" onclick="window.location.href='https://s.shopee.vn/4fczIRFEIr';"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline" onclick="window.location.href='https://s.shopee.vn/4fczIRFEIr';"></ion-icon>
+                    </button>
+              
+                    <!-- <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button> -->
+              
+                    <!-- <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button> -->
+                  </div>
+                </div>
+              
+                <div class="showcase-content">
+                  <a href="https://s.shopee.vn/4fczIRFEIr" class="showcase-category">T-Shirt</a>
+              
+                  <h3>
+                    <a href="https://s.shopee.vn/4fczIRFEIr" class="showcase-title">Oversized Cotton T-Shirt with Glitter Print - C.H.R.D.l.O.R</a>
+                  </h3>
+              
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+              
+                  <div class="price-box">
+                    <p class="price">$3.23</p>
+                    <del>$4.15</del>
+                  </div>
+              
+                </div>
+              
+              </div>
+
+              <div class="showcase">
+              
+                <div class="showcase-banner">
+                  <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lfi6dn9ss0ad89" alt="Womens Party Wear Shoes" class="product-img default"
+                    width="300">
+                  <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7qukw-lfi6dna2ndyt02" alt="Womens Party Wear Shoes" class="product-img hover"
+                    width="300">
+              
+                  <p class="showcase-badge angle black">sale</p>
+              
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline" onclick="window.location.href='https://s.shopee.vn/9UiF48TI8A';"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline" onclick="window.location.href='https://s.shopee.vn/9UiF48TI8A';"></ion-icon>
+                    </button>
+              
+                    <!-- <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button> -->
+              
+                    <!-- <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button> -->
+                  </div>
+                </div>
+              
+                <div class="showcase-content">
+                  <a href="https://s.shopee.vn/9UiF48TI8A" class="showcase-category">women's shirt</a>
+              
+                  <h3>
+                    <a href="https://s.shopee.vn/9UiF48TI8A" class="showcase-title">Women's Oversized Long Sleeve Shirt Ulzzang Korean Style Basic 10 Colors</a>
+                  </h3>
+              
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-half-outline"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+              
+                  <div class="price-box">
+                    <p class="price">$2.20</p>
+                    <del>$5.60</del>
+                  </div>
+              
+                </div>
+              
+              </div>
+
+              <div class="showcase">
+              
+                <div class="showcase-banner">
+                  <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lvcivujhzuqs83" alt="Mens Winter Leathers Jackets" class="product-img default"
+                    width="300">
+                  <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lvcivuji2nvo34" alt="Mens Winter Leathers Jackets" class="product-img hover"
+                    width="300">
+              
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline" onclick="window.location.href='https://s.shopee.vn/9UiF4XruQm';"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline" onclick="window.location.href='https://s.shopee.vn/9UiF4XruQm';"></ion-icon>
+                    </button>
+              
+                    <!-- <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button> -->
+              
+                    <!-- <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button> -->
+                  </div>
+                </div>
+              
+                <div class="showcase-content">
+                  <a href="https://s.shopee.vn/9UiF4XruQm" class="showcase-category">Set</a>
+              
+                  <h3>
+                    <a href="https://s.shopee.vn/9UiF4XruQm" class="showcase-title">Set of Short Sleeve Top & Wide-Leg Pants, Korean Style M1402</a>
+                  </h3>
+              
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+              
+                  <div class="price-box">
+                    <p class="price">$2.36</p>
+                    <del>$4.00</del>
+                  </div>
+              
+                </div>
+              
+              </div>
+
+              <div class="showcase">
+              
+                <div class="showcase-banner">
+                  <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lsxqzubxc1p5ec" alt="Trekking & Running Shoes - black" class="product-img default"
+                    width="300">
+                  <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lsh4o8zquis972" alt="Trekking & Running Shoes - black" class="product-img hover"
+                    width="300">
+              
+                  <p class="showcase-badge angle black">sale</p>
+              
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline" onclick="window.location.href='https://s.shopee.vn/r9lfrbyU';"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline" onclick="window.location.href='https://s.shopee.vn/r9lfrbyU';"></ion-icon>
+                    </button>
+              
+                    <!-- <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button> -->
+              
+                    <!-- <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button> -->
+                  </div>
+                </div>
+              
+                <div class="showcase-content">
+                  <a href="https://s.shopee.vn/r9lfrbyU" class="showcase-category">sports</a>
+              
+                  <h3>
+                    <a href="https://s.shopee.vn/r9lfrbyU" class="showcase-title">Trekking & Running Shoes - black</a>
+                  </h3>
+              
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+              
+                  <div class="price-box">
+                    <p class="price">$0.76</p>
+                    <del>$1.21</del>
+                  </div>
+              
+                </div>
+              
+              </div>
+
+              <div class="showcase">
+              
+                <div class="showcase-banner">
+                  <img src="https://down-vn.img.susercontent.com/file/0acbc04eda2ec4fa999d14a58fa2576d" alt="Men's Leather Formal Wear shoes" class="product-img default"
+                    width="300">
+                  <img src="https://down-vn.img.susercontent.com/file/c124e7f1d66a0e5026501a58590e7cd5" alt="Men's Leather Formal Wear shoes" class="product-img hover"
+                    width="300">
+              
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline" onclick="window.location.href='https://s.shopee.vn/40NIY4uGIi';"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline" onclick="window.location.href='https://s.shopee.vn/40NIY4uGIi';"></ion-icon>
+                    </button>
+              
+                    <!-- <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button> -->
+              
+                    <!-- <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button> -->
+                  </div>
+                </div>
+              
+                <div class="showcase-content">
+                  <a href="https://s.shopee.vn/40NIY4uGIi" class="showcase-category">Shorts</a>
+              
+                  <h3>
+                    <a href="https://s.shopee.vn/40NIY4uGIi" class="showcase-title">Black Funoff Biker Shorts</a>
+                  </h3>
+              
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+              
+                  <div class="price-box">
+                    <p class="price">$1.57</p>
+                    <del>$3.02</del>
+                  </div>
+              
+                </div>
+              
+              </div>
+
+              <div class="showcase">
+              
+                <div class="showcase-banner">
+                  <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lnwcom6t0ry20f" alt="Better Basics French Terry Sweatshorts"
+                    class="product-img default" width="300">
+                  <img src="https://down-vn.img.susercontent.com/file/vn-11134207-7r98o-lnwcom6t3l2y53" alt="Better Basics French Terry Sweatshorts"
+                    class="product-img hover" width="300">
+              
+                  <p class="showcase-badge angle black">sale</p>
+              
+                  <div class="showcase-actions">
+                    <button class="btn-action">
+                      <ion-icon name="heart-outline" onclick="window.location.href='https://s.shopee.vn/9KOouPeE8K';"></ion-icon>
+                    </button>
+              
+                    <button class="btn-action">
+                      <ion-icon name="eye-outline" onclick="window.location.href='https://s.shopee.vn/9KOouPeE8K';"></ion-icon>
+                    </button>
+              
+                    <!-- <button class="btn-action">
+                      <ion-icon name="repeat-outline"></ion-icon>
+                    </button> -->
+              
+                    <!-- <button class="btn-action">
+                      <ion-icon name="bag-add-outline"></ion-icon>
+                    </button> -->
+                  </div>
+                </div>
+              
+                <div class="showcase-content">
+                  <a href="https://s.shopee.vn/9KOouPeE8K" class="showcase-category">women's t-shirt</a>
+              
+                  <h3>
+                    <a href="https://s.shopee.vn/9KOouPeE8K" class="showcase-title">CaMa Store Twist Hem Ruched Tee</a>
+                  </h3>
+              
+                  <div class="showcase-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                  </div>
+              
+                  <div class="price-box">
+                    <p class="price">$1.46</p>
+                    <del>$2.50</del>
+                  </div>
+              
+                </div>
+              
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+
+    <!--
+      - TESTIMONIALS, CTA & SERVICE
+    -->
+
+    <div>
+
+      <div class="container">
+
+        <div class="testimonials-box">
+
+          <!--
+            - TESTIMONIALS
+          -->
+
+          <div class="testimonial">
+
+            <h2 class="title">testimonial</h2>
+
+            <div class="testimonial-card">
+
+              <img src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/testimonial-1.jpg" alt="alan doe" class="testimonial-banner" width="80" height="80">
+
+              <p class="testimonial-name">Alan Doe</p>
+
+              <p class="testimonial-title">CEO & Founder Invision</p>
+
+              <img src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/icons/quotes.svg" alt="quotation" class="quotation-img" width="26">
+
+              <p class="testimonial-desc">
+                Fantastic shop with a great variety of products and excellent customer service. Quality items at reasonable prices. Highly recommend for a seamless shopping experience!
+              </p>
+
+            </div>
+
+          </div>
+
+
+
+          <!--
+            - CTA
+          -->
+
+          <div class="cta-container">
+
+            <img src="https://cdn.dribbble.com/userupload/3105260/file/original-b20defd720e2a3c17312fda71355a1b6.png?compress=1&resize=1504x1128" alt="summer collection" class="cta-banner">
+
+            <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="cta-content">
+
+              <p class="discount">25% Discount</p>
+
+              <h2 class="cta-title">Summer collection</h2>
+
+              <p class="cta-text">Starting @ $10</p>
+
+              <button class="cta-btn">Shop now</button>
+
+            </a>
+
+          </div>
+
+
+
+          <!--
+            - SERVICE
+          -->
+
+          <!-- <div class="service">
+
+            <h2 class="title">Our Services</h2>
+
+            <div class="service-container">
+
+              <a href="#" class="service-item">
+
+                <div class="service-icon">
+                  <ion-icon name="boat-outline"></ion-icon>
+                </div>
+
+                <div class="service-content">
+
+                  <h3 class="service-title">Worldwide Delivery</h3>
+                  <p class="service-desc">For Order Over $100</p>
+
+                </div>
+
+              </a>
+
+              <a href="#" class="service-item">
+              
+                <div class="service-icon">
+                  <ion-icon name="rocket-outline"></ion-icon>
+                </div>
+              
+                <div class="service-content">
+              
+                  <h3 class="service-title">Next Day delivery</h3>
+                  <p class="service-desc">UK Orders Only</p>
+              
+                </div>
+              
+              </a>
+
+              <a href="#" class="service-item">
+              
+                <div class="service-icon">
+                  <ion-icon name="call-outline"></ion-icon>
+                </div>
+              
+                <div class="service-content">
+              
+                  <h3 class="service-title">Best Online Support</h3>
+                  <p class="service-desc">Hours: 8AM - 11PM</p>
+              
+                </div>
+              
+              </a>
+
+              <a href="#" class="service-item">
+              
+                <div class="service-icon">
+                  <ion-icon name="arrow-undo-outline"></ion-icon>
+                </div>
+              
+                <div class="service-content">
+              
+                  <h3 class="service-title">Return Policy</h3>
+                  <p class="service-desc">Easy & Free Return</p>
+              
+                </div>
+              
+              </a>
+
+              <a href="#" class="service-item">
+              
+                <div class="service-icon">
+                  <ion-icon name="ticket-outline"></ion-icon>
+                </div>
+              
+                <div class="service-content">
+              
+                  <h3 class="service-title">30% money back</h3>
+                  <p class="service-desc">For Order Over $100</p>
+              
+                </div>
+              
+              </a>
+
+            </div>
+
+          </div> -->
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+
+
+
+    <!--
+      - BLOG
+    -->
+
+    <div class="blog">
+
+      <div class="container">
+
+        <div class="blog-container has-scrollbar">
+
+          <div class="blog-card">
+
+            <a href="post1.html">
+              <img src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/blog-1.jpg" alt="Clothes Retail KPIs 2021 Guide for Clothes Executives" width="300" class="blog-banner">
+            </a>
+
+            <div class="blog-content">
+
+              <a href="#" class="blog-category">Fashion</a>
+
+              <a href="post1.html">
+                <h3 class="blog-title">Clothes Retail KPIs 2021 Guide for Clothes Executives.</h3>
+              </a>
+
+              <p class="blog-meta">
+                By <cite>Mr Admin</cite> / <time datetime="2022-04-06">Apr 06, 2022</time>
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="blog-card">
+          
+            <a href="post2.html">
+              <img src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/blog-2.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."
+                class="blog-banner" width="300">
+            </a>
+          
+            <div class="blog-content">
+          
+              <a href="#" class="blog-category">Clothes</a>
+          
+              <h3>
+                <a href="post2.html" class="blog-title">Curbside fashion Trends: How to Win the Pickup Battle.</a>
+              </h3>
+          
+              <p class="blog-meta">
+                By <cite>Mr Robin</cite> / <time datetime="2022-01-18">Jan 18, 2022</time>
+              </p>
+          
+            </div>
+          
+          </div>
+
+          <div class="blog-card">
+          
+            <a href="post3.html">
+              <img src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/blog-3.jpg" alt="EBT vendors: Claim Your Share of SNAP Online Revenue."
+                class="blog-banner" width="300">
+            </a>
+          
+            <div class="blog-content">
+          
+              <a href="#" class="blog-category">Shoes</a>
+          
+              <h3>
+                <a href="post3.html" class="blog-title">EBT vendors: Claim Your Share of SNAP Online Revenue.</a>
+              </h3>
+          
+              <p class="blog-meta">
+                By <cite>Mr Selsa</cite> / <time datetime="2022-02-10">Feb 10, 2022</time>
+              </p>
+          
+            </div>
+          
+          </div>
+
+          <div class="blog-card">
+          
+            <a href="post4.html">
+              <img src="https://codewithsadee.github.io/anon-ecommerce-website/assets/images/blog-4.jpg" alt="Curbside fashion Trends: How to Win the Pickup Battle."
+                class="blog-banner" width="300">
+            </a>
+          
+            <div class="blog-content">
+          
+              <a href="#" class="blog-category">Electronics</a>
+          
+              <h3>
+                <a href="post4.html" class="blog-title">Curbside fashion Trends: How to Win the Pickup Battle.</a>
+              </h3>
+          
+              <p class="blog-meta">
+                By <cite>Mr Pawar</cite> / <time datetime="2022-03-15">Mar 15, 2022</time>
+              </p>
+          
+            </div>
+          
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+
+
+
+  <!--
+    - FOOTER
+  -->
+
+  <footer>
+
+    <div class="footer-category">
+
+      <div class="container">
+
+        <h2 class="footer-category-title">Brand directory</h2>
+
+        <div class="footer-category-box">
+
+          <h3 class="category-box-title">Fashion :</h3>
+
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">T-shirt</a>  
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">Shirts</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">shorts & jeans</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">jacket</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">dress & frock</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">innerwear</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">hosiery</a>
+
+        </div>
+
+        <div class="footer-category-box">
+          <h3 class="category-box-title">footwear :</h3>
+        
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">sport</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">formal</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">Boots</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">casual</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">cowboy shoes</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">safety shoes</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">Party wear shoes</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">Branded</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">Firstcopy</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">Long shoes</a>
+        </div>
+
+        <div class="footer-category-box">
+          <h3 class="category-box-title">jewellery :</h3>
+        
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">Necklace</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">Earrings</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">Couple rings</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">Pendants</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">Crystal</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">Bangles</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">bracelets</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">nosepin</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">chain</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">Earrings</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">Couple rings</a>
+        </div>
+
+        <div class="footer-category-box">
+          <h3 class="category-box-title">cosmetics :</h3>
+        
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">Shampoo</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">Bodywash</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">Facewash</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">makeup kit</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">liner</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">lipstick</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">prefume</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">Body soap</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">scrub</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">hair gel</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">hair colors</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">hair dye</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">sunscreen</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">skin loson</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">liner</a>
+          <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-category-link">lipstick</a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer-nav">
+
+      <div class="container">
+
+        <ul class="footer-nav-list">
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Popular Categories</h2>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-nav-link">Fashion</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-nav-link">Electronic</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-nav-link">Cosmetic</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-nav-link">Health</a>
+          </li>
+
+          <li class="footer-nav-item">
+            <a href="https://go.isclix.com/deep_link/v6/6472106158342289824/4751584435713464237?sub1=7137312&sub4=oneatapp&url_enc=aHR0cHM6Ly9zaG9wZWUudm4v" class="footer-nav-link">Watches</a>
+          </li>
+
+        </ul>
+
+        <!-- <ul class="footer-nav-list">
+        
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Products</h2>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Prices drop</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">New products</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Best sales</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Contact us</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Sitemap</a>
+          </li>
+        
+        </ul> -->
+
+        <!-- <ul class="footer-nav-list">
+        
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Our Company</h2>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Delivery</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Legal Notice</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Terms and conditions</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">About us</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Secure payment</a>
+          </li>
+        
+        </ul> -->
+
+        <!-- <ul class="footer-nav-list">
+        
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Services</h2>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Prices drop</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">New products</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Best sales</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Contact us</a>
+          </li>
+        
+          <li class="footer-nav-item">
+            <a href="#" class="footer-nav-link">Sitemap</a>
+          </li>
+        
+        </ul> -->
+
+        <ul class="footer-nav-list">
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Contact</h2>
+          </li>
+
+          <li class="footer-nav-item flex">
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <address class="content">
+              Vietnam
+            </address>
+          </li>
+
+          <li class="footer-nav-item flex">
+            <div class="icon-box">
+              <ion-icon name="call-outline"></ion-icon>
+            </div>
+
+            <p class="footer-nav-link">(+84)985461396</p>
+          </li>
+
+          <li class="footer-nav-item flex">
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
+            </div>
+
+            <a href="mailto:linhkimnguyen01@gmail.com" class="footer-nav-link">linhkimnguyen01@gmail.com</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-nav-list">
+
+          <li class="footer-nav-item">
+            <h2 class="nav-title">Follow Us</h2>
+          </li>
+
+          <li>
+            <ul class="social-link">
+
+              <li class="footer-nav-item">
+                <a href="https://facebook.com/" class="footer-nav-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+                <a href="https://twitter.com/" class="footer-nav-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+                <a href="https://www.linkedin.com/" class="footer-nav-link">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+              </li>
+
+              <li class="footer-nav-item">
+                <a href="https://www.instagram.com/" class="footer-nav-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <div class="container">
+
+        <!-- <img src="./assets/images/payment.png" alt="payment method" class="payment-img"> -->
+
+        <p class="copyright">
+          Copyright &copy; <a href="https://ashopvn.netlify.app/" style="color:hsla(170, 78%, 56%, 0.882);">AShopVN</a>  |  all rights reserved.
+        </p>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+
+
+
+  <!--
+    - custom js link
+  -->
+  <script src="newshop.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
